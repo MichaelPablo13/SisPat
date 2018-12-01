@@ -1,0 +1,116 @@
+﻿/*    formatação da página   */
+
+form {
+ margin-left: 20%;
+ margin-right: 20%;
+ border: 1px solid gray;
+ font-family: Verdana, Geneva, sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #44bd32;
+    list-style: none;
+}
+nav > a {
+    text-decoration: none;
+    color: #ffff;
+    font-weight: 700;
+    font-size: 28px;
+    font-family: Arial;
+
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+nav ul li{
+    text-align: center;
+    width: 100%;
+    
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    text-decoration: none;
+    color:#fff;
+    list-style: none;
+}
+
+h2 {
+    border: 1px grey;
+    background-color: #ecf0f1;
+}
+h4 {
+    border-bottom: 1px solid grey ;
+    padding-bottom: 10px;
+}
+
+/* classe notícias, formata as classes no formato padrao do site, mais abaixo possue media queries, que usei para determinar o tamanho do site ao quebrar de tamanho, ou seja, fazendo com que ele se adapte a tamanho menores de telas.
+*/
+
+
+.noticias {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #9deebf;
+    font-weight: bold; 
+    border-bottom: 1px dotted;        
+    margin-top: 20px;       
+    }
+
+.btn:hover {
+    background-color: #44bd32;
+    color: white;
+    }
+
+    footer{
+        background-color: #2ecc71;
+        text-align: center;
+    }
+    span .btn {
+        padding: 10px;
+        color: white;
+        background-color: #1abc9c;
+        font-weight: bold;
+    }
+
+
+
+/*    Responsividade, aqui determino as configurações de tamanho
+    do site quando ele diminuir de tamanho perceba a diferença do menu  */
+
+
+@media screen and (min-width: 768px) {
+    
+    nav {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        width: 70%;
+    }
+
+    .noticias {
+        flex-wrap: wrap;
+        background-color: #9deebf;
+        font-weight: bold; 
+        border-bottom: 1px dotted;        
+        margin-top: 20px;       
+    }
+ 
+    footer{
+        background-color: #2ecc71;
+        text-align: center;
+    }
