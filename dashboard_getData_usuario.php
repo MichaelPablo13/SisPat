@@ -9,7 +9,7 @@
     
     // Instead you can query your database and parse into JSON etc etc
     //Umbiguity: For status of computers
-    $query = "select status, count(status) as contagem_status from agendar group by status";
+    $query = "SELECT DISTINCT departamento, COUNT(nome) as contagem_departmento FROM usuarios group by departamento order by contagem_departmento DESC";
     $qresult = mysqli_query($conexao, $query);
     $results = array();
 
@@ -22,14 +22,14 @@
     $bar_chart_data = array();
 
     foreach($results as $result) {
-        $bar_chart_data[] = array($result['status'], (int)$result['contagem_status']);
+        $bar_chart_data[] = array($result['departamento'], (int)$result['contagem_departmento']);
     }
     
-    $json_bar_chart_data = json_encode($bar_chart_data);
+    $json_bar_chart_data_usuario = json_encode($bar_chart_data);
 
     // print_r($bar_chart_data);
 
-    echo $json_bar_chart_data;
+    echo $json_bar_chart_data_usuario;
 
     mysqli_free_result($qresult);
 ?>
