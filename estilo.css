@@ -66,17 +66,18 @@ form {
        font-weight: bold; 
        border-bottom: 1px dotted;        
        margin-top: 20px;       
-       }
+    }
+
+    footer{
+        background-color: #2e8dcc;
+        text-align: center;
+    }
    
    .btn:hover {
        background-color: #21bee6ef;
        color: white;
        }
    
-       footer{
-           background-color: #2e8dcc;
-           text-align: center;
-       }
        span .btn {
            padding: 10px;
            color: white;

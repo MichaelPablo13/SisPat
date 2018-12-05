@@ -90,8 +90,7 @@
 
 
     <footer>
-        <address>Avenida Thereza Ana Cecon Breda, s/n - Vila Sao Pedro - Hortolandia-SP - Brasil - Cep: 13183-250 -
-            Telefone: (19) 3865-8070</address>
+        <address>SIECP - Sistema de Inventário e Empréstimos de Computadores e Periféricos</address>
     </footer>
 </body>
 
