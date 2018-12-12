@@ -25,18 +25,18 @@ if(!empty($id) && !empty($title) && !empty($color) && !empty($start) && !empty($
 	$end_sem_barra = $data_sem_barra . " " . $hora;
 	
 	$result_events = "UPDATE events SET title='$title', color='$color', start='$start_sem_barra', end='$end_sem_barra' WHERE id='$id'"; 
-	$resultado_events = mysqli_query($conn, $result_events);
+	$resultado_events = mysqli_query($conexao, $result_events);
 	
 	//Verificar se alterou no banco de dados através "mysqli_affected_rows"
-	if(mysqli_affected_rows($conn)){
+	if(mysqli_affected_rows($conexao)){
 		$_SESSION['msg'] = "<div class='alert alert-success' role='alert'>O Evento editado com Sucesso<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-		header("Location: index.php");
+		header("Location: emprestimosManutencao.php");
 	}else{
 		$_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro ao editar o evento <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-		header("Location: index.php");
+		header("Location: emprestimosManutencao.php");
 	}
 	
 }else{
 	$_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro ao editar o evento <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-	header("Location: index.php");
+	header("Location: emprestimosManutencao.php");
 }

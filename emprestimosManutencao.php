@@ -144,7 +144,7 @@
                                     <a href="" id="apagar_evento" class="btn btn-danger" role="button">Apagar</a>
                                 </div>   
                                 <div class="form">
-                                    <form method="POST" action="proc_edit_evento.php">
+                                    <form method="POST" action="emprestimosManutencao_proc_edit_evento.php">
                                         <div class="form-group">
                                             <div class="form-group col-md-12">
                                                 <label>Titulo</label>
