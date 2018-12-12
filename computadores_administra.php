@@ -13,13 +13,13 @@
     $fimAluguel = $_POST["fimAluguel"];
     $userName = $_POST["userName"];
     // add later
-    // $_SESSION['usuario'];
+    echo $_SESSION['usuario'];
 
     $sql = "INSERT INTO computador (`nome_computador`, `modelo`, 
             `tipo`, `centro_de_custo`, `inicio_de_aluguel`, 
-            `fim_de_aluguel`, `date_created`, `status`, modificador) VALUES ";
-    $sql .= "('$nomeComputador', '$modelo', $tipoMaquina, '$centroCusto', 
-              '$centroCusto', '$inicioAluguel', '$fimAluguel','Ativado', now() )";
+            `fim_de_aluguel`, `date_created`, `status`) VALUES ";
+    $sql .= "('$nomeComputador', '$modelo', '$tipoMaquina', '$centroCusto', 
+              '$inicioAluguel', '$fimAluguel', now(),'Ativado')";
 
     include "conexao.php";
     $resultado = mysqli_query($conexao, $sql);
@@ -27,8 +27,8 @@
     echo $sql;
 
     $sqlInter = "INSERT INTO `usuarios_computador`(`computador_idcomputador`, `usuarios_idUsuarios`) VALUES 
-    ((SELECT c.idcomputador FROM computador c WHERE c.nome_computador = \'$nomeComputador\' LIMIT 1), 
-    (SELECT idUsuarios FROM usuarios u WHERE u.nome_de_usuario = \'$userName\' LIMIT 1))";
+    ((SELECT c.idcomputador FROM computador c WHERE c.nome_computador = '$nomeComputador' LIMIT 1), 
+    (SELECT idUsuarios FROM usuarios u WHERE u.nome_de_usuario = '$userName' LIMIT 1))";
      
     echo $sqlInter;
 

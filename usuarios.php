@@ -58,7 +58,7 @@
             <center>
                 <h2>Excluir Usuários</h2>
                 <input type="hidden" name="operacao" value="excluir">
-                <p>Nome de Usuario <input type="text" size="10" name="nomeUsuario" required>
+                <p>Nome de Usuário <input type="text" size="10" name="nomeUsuario" required>
                     <p><input type="submit" value="Excluir Produto" name="enviar"></p>
             </center>
         </form>

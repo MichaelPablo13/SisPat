@@ -5,18 +5,20 @@ form {
     margin-right: 20%;
     border: 1px solid gray;
     font-family: Verdana, Geneva, sans-serif;
+    border-radius: 10px; 
    }
    
    nav {
        display: flex;
        flex-direction: column;
        align-items: center;
-       background-color: #32a8bdef;
+       background-color: #44bd32;
        list-style: none;
+       border-radius: 10px; 
    }
    nav > a {
        text-decoration: none;
-       color: #32a8bdef;
+       color: #ffff;
        font-weight: 700;
        font-size: 28px;
        font-family: Arial;
@@ -42,7 +44,7 @@ form {
        padding: 10px 0;
        width: 100%;
        text-decoration: none;
-       color:#32a8bdef;
+       color:#fff;
        list-style: none;
    }
    
@@ -62,26 +64,26 @@ form {
    .noticias {
        display: flex;
        flex-wrap: wrap;
-       background-color: #32a8bdef;
+       background-color: skyblue;
        font-weight: bold; 
        border-bottom: 1px dotted;        
        margin-top: 20px;       
-    }
-
-    footer{
-        background-color: #2e8dcc;
-        text-align: center;
-    }
+       }
    
    .btn:hover {
-       background-color: #21bee6ef;
+       background-color: skyblue;
        color: white;
        }
    
+       footer{
+           background-color: skyblue;
+           text-align: center;
+           border-radius: 10px;
+       }
        span .btn {
            padding: 10px;
            color: white;
-           background-color: #32a8bdef;
+           background-color: skyblue;
            font-weight: bold;
        }
    
@@ -105,15 +107,14 @@ form {
    
        .noticias {
            flex-wrap: wrap;
-           background-color: #9deebf;
+           background-color: skyblue;
            font-weight: bold; 
            border-bottom: 1px dotted;        
            margin-top: 20px;       
        }
     
        footer{
-           background-color: #32a8bdef;
+           background-color: skyblue;
            text-align: center;
        }
-   }
-   
+    }   

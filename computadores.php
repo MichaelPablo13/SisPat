@@ -44,10 +44,10 @@
 
                 <p>Nome do Computador <input type="text" size="10" name="nomeComputador" required>
                 <p>Modelo <input type="text" size="20" name="modeloComputador" required></p>
-                <p>Tipo de Maquina <input type="text" size="10" name="tipoMaquina" required></p>
+                <p>Tipo de Máquina   <input type="text" size="10" name="tipoMaquina" required></p>
                 <p>Centro de Custo <input type="text" size="10" name="centroCusto" required></p>
-                <p>Inicio Aluguel <input type="text" size="10" name="inicioAluguel" required></p>
-                <p>Fim Aluguel <input type="text" size="10" name="fimAluguel" required></p>
+                <p>Inicio Aluguel <input type="date" size="10" name="inicioAluguel" required></p>
+                <p>Fim Aluguel <input type="date" size="10" name="fimAluguel" required></p>
                 <p>Usuários da Maquina <input type="text" size="10" name="userName" required></p>
 
                 <p><input type="submit" value="Incluir" name="enviar">

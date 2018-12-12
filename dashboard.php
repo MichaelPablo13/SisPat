@@ -293,7 +293,7 @@
 
         <form name="form1" method="post" action="usuarios_administra.php">
             <center>
-                <h2>Quantidade de computadores que terao leasing vencido por data</h2>
+                <h2>Quantidade de computadores por data de vencimento de aluguel</h2>
                 <div id="dashboard_line_computador_div">
                 <!--Divs that will hold each control and chart-->
                     <div id="barchart_filter_computador_div"></div>
