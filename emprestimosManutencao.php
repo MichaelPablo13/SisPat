@@ -29,6 +29,8 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
 
+
+
     <script>
 
         $(document).ready(function () {
@@ -105,9 +107,7 @@
     ?>
 
     <div class="conteudo">
-        
-        <form name="form1" method="post" action="administra.php">
-            <center>
+           <center>
                 <div class="container"><br>
                     <?php
                         if (isset($_SESSION['msg'])) {
@@ -193,7 +193,16 @@
                         </div>
                     </div>
                 </div>
-
+                <script>
+                    $('.btn-canc-vis').on("click", function () {
+                        $('.form').slideToggle();
+                        $('.visualizar').slideToggle();
+                    });
+                    $('.btn-canc-edit').on("click", function () {
+                        $('.visualizar').slideToggle();
+                        $('.form').slideToggle();
+                    });
+                </script>
 
                 <div class="modal fade" id="cadastrar" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-lg" role="document">
@@ -255,9 +264,7 @@
                 </div>
 
             </center>
-        </form>
         </br>
-
     </div>
 
 
@@ -299,16 +306,6 @@
                 event.returnValue = false;
             }
         }
-
-
-        $('.btn-canc-vis').on("click", function () {
-            $('.form').slideToggle();
-            $('.visualizar').slideToggle();
-        });
-        $('.btn-canc-edit').on("click", function () {
-            $('.visualizar').slideToggle();
-            $('.form').slideToggle();
-        });
     </script>
 
 
