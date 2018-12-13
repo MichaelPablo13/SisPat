@@ -52,6 +52,10 @@
                     $('#visualizar #id').val(event.id);
                     $('#visualizar #title').text(event.title);
                     $('#visualizar #title').val(event.title);
+                    $('#visualizar #nome_recurso').text(event.nome_recurso);
+                    $('#visualizar #nome_recurso').val(event.nome_recurso);
+                    $('#visualizar #responsavel_ti').text(event.responsavel_ti);
+                    $('#visualizar #responsavel_ti').val(event.responsavel_ti);
                     $('#visualizar #start').text(event.start.format('DD/MM/YYYY HH:mm:ss'));
                     $('#visualizar #start').val(event.start.format('DD/MM/YYYY HH:mm:ss'));
                     $('#visualizar #end').text(event.end.format('DD/MM/YYYY HH:mm:ss'));
@@ -90,13 +94,13 @@
         
         <center><img src="imagens/logo.png" alt="Logo do Sistema de Patrimonio versao 1.0" /></center>
 
-        <nav>
-            <ul class="nav">
-                <li><a href="computadores.php">Computadores</li></a>
-                <li><a href="perifericos.php">Perifericos</li></a>
-                <li><a href="usuarios.php">Usuarios</li></a>
-                <li><a href="emprestimosManutencao.php">Emprestimos e Manutencao</li></a>
-                <li><a href="Dashboard.php">Dashboard</li></a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <ul class="navbar-nav mr-auto cen">
+                <li class="nav-item"><a class="nav-link" href="computadores.php">Computadores</li></a>
+                <li class="nav-item"><a class="nav-link" href="perifericos.php">Periférico</li></a>
+                <li class="nav-item"><a class="nav-link" href="usuarios.php">Usuários</li></a>
+                <li class="nav-item active"><a class="nav-link" href="emprestimosManutencao.php">Empréstimo e Manutenção</li></a>
+                <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</li></a>
             </ul>
         </nav>
 
@@ -135,6 +139,10 @@
                                         <dd id="id" class="col-sm-9"></dd>
                                         <dt class="col-sm-3">Titulo do Evento</dt>
                                         <dd id="title" class="col-sm-9"></dd>
+                                        <dt class="col-sm-3">Nome do Patrimonio</dt>
+                                        <dd id="nome_recurso" class="col-sm-9"></dd>
+                                        <dt class="col-sm-3">Responsavel TI</dt>
+                                        <dd id="responsavel_ti" class="col-sm-9"></dd>
                                         <dt class="col-sm-3">Inicio do Evento</dt>
                                         <dd id="start" class="col-sm-9"></dd>
                                         <dt class="col-sm-3">Fim do Evento</dt>
@@ -149,6 +157,14 @@
                                             <div class="form-group col-md-12">
                                                 <label>Titulo</label>
                                                 <input type="text" class="form-control" name="title" id="title" placeholder="Titulo do Evento">
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label>Nome do Patrimonio</label>
+                                                <input type="text" class="form-control" name="nome_recurso" id="nome_recurso" placeholder="Nome do Patrimonio">
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label>Responsavel de TI</label>
+                                                <input type="text" class="form-control" name="responsavel_ti" id="responsavel_ti" placeholder="Responsavel TI">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -219,6 +235,16 @@
                                         <div class="form-group col-md-12">
                                             <label>Titulo</label>
                                             <input type="text" class="form-control" name="title" id="title" placeholder="Titulo do Evento">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label>Nome do Patrimonio</label>
+                                        <input type="text" class="form-control" name="nome_recurso" id="nome_recurso" placeholder="Nome do Patrimonio">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group col-md-12">
+                                            <label>Responsavel de TI</label>
+                                            <input type="text" class="form-control" name="responsavel_ti" id="responsavel_ti" placeholder="Responsavel TI">
                                         </div>
                                     </div>
 

@@ -5,11 +5,12 @@ session_start();
 include "conexao.php";
 
 $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+$nome_recurso = filter_input(INPUT_POST, 'nome_recurso', FILTER_SANITIZE_STRING);
+$responsavel_ti = filter_input(INPUT_POST, 'responsavel_ti', FILTER_SANITIZE_STRING);
+$scheduler = $_SESSION['usuario'];
 $color = filter_input(INPUT_POST, 'color', FILTER_SANITIZE_STRING);
 $start = filter_input(INPUT_POST, 'start', FILTER_SANITIZE_STRING);
 $end = filter_input(INPUT_POST, 'end', FILTER_SANITIZE_STRING);
-
-echo $title;
 
 if(!empty($title) && !empty($color) && !empty($start) && !empty($end)){
 	//Converter a data e hora do formato brasileiro para o formato do Banco de Dados
@@ -25,9 +26,9 @@ if(!empty($title) && !empty($color) && !empty($start) && !empty($end)){
 	$data_sem_barra = implode("-", $data_sem_barra);
 	$end_sem_barra = $data_sem_barra . " " . $hora;
 	
-	$result_events = "INSERT INTO events (title, color, start, end) VALUES ('$title', '$color', '$start_sem_barra', '$end_sem_barra')";
+	$result_events = "INSERT INTO events (title,  nome_recurso, responsavel_ti, color, start, end, scheduler_name, date_created) VALUES ('$title', '$nome_recurso', '$responsavel_ti', '$color', '$start_sem_barra', '$end_sem_barra', '$scheduler', now())";
 	$resultado_events = mysqli_query($conexao, $result_events);
-	
+	echo $result_events;
 	//Verificar se salvou no banco de dados através "mysqli_insert_id" o qual verifica se existe o ID do último dado inserido
 	if(mysqli_insert_id($conexao)){
 		$_SESSION['msg'] = "<div class='alert alert-success' role='alert'>O Evento Cadastrado com Sucesso<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";

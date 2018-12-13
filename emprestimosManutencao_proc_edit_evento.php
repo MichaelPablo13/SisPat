@@ -6,6 +6,9 @@ include_once("conexao.php");
 
 $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
 $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+$nome_recurso = filter_input(INPUT_POST, 'nome_recurso', FILTER_SANITIZE_STRING);
+$responsavel_ti = filter_input(INPUT_POST, 'responsavel_ti', FILTER_SANITIZE_STRING);
+$scheduler = $_SESSION['usuario'];
 $color = filter_input(INPUT_POST, 'color', FILTER_SANITIZE_STRING);
 $start = filter_input(INPUT_POST, 'start', FILTER_SANITIZE_STRING);
 $end = filter_input(INPUT_POST, 'end', FILTER_SANITIZE_STRING);
@@ -24,19 +27,19 @@ if(!empty($id) && !empty($title) && !empty($color) && !empty($start) && !empty($
 	$data_sem_barra = implode("-", $data_sem_barra);
 	$end_sem_barra = $data_sem_barra . " " . $hora;
 	
-	$result_events = "UPDATE events SET title='$title', color='$color', start='$start_sem_barra', end='$end_sem_barra' WHERE id='$id'"; 
+	$result_events = "UPDATE events SET title='$title', color='$color', nome_recurso='$nome_recurso', responsavel_ti='$responsavel_ti', start='$start_sem_barra', end='$end_sem_barra', scheduler_name='$scheduler', date_created=now() WHERE id='$id'"; 
 	$resultado_events = mysqli_query($conexao, $result_events);
-	
-	//Verificar se alterou no banco de dados através "mysqli_affected_rows"
+	echo $result_events;
+
+		// Verificar se alterou no banco de dados através "mysqli_affected_rows"
 	if(mysqli_affected_rows($conexao)){
 		$_SESSION['msg'] = "<div class='alert alert-success' role='alert'>O Evento editado com Sucesso<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-		header("Location: emprestimosManutencao.php");
+		 header("Location: emprestimosManutencao.php");
 	}else{
 		$_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro ao editar o evento <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-		header("Location: emprestimosManutencao.php");
+		 header("Location: emprestimosManutencao.php");
 	}
-	
-}else{
+	}else{
 	$_SESSION['msg'] = "<div class='alert alert-danger' role='alert'>Erro ao editar o evento <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-	header("Location: emprestimosManutencao.php");
+	 header("Location: emprestimosManutencao.php");
 }
